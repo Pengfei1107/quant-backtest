@@ -1,23 +1,23 @@
 import pandas as pd
-
-from strategy.base import BaseStrategy
+from strategy.base_strategy import BaseStrategy
 
 class MovingAverageStrategy(BaseStrategy):
 
-    def __init__(self, short_window, long_window):
+    def __init__(self, short_window: int = 5, long_window: int = 20):
         self.short_window = short_window
         self.long_window = long_window
 
-    def generate_signal(self, data, index):
+    def generate_signal(self, data: pd.DataFrame, index: int) -> int:
+
         if index < self.long_window:
-            return None
+            return 0
 
         short_ma = data["close"].iloc[index-self.short_window:index].mean()
         long_ma = data["close"].iloc[index-self.long_window:index].mean()
 
         if short_ma > long_ma:
-            return "BUY"
+            return 1
         elif short_ma < long_ma:
-            return "SELL"
+            return -1
         else:
-            return None
+            return 0

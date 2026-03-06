@@ -1,19 +1,24 @@
-from engine.backtest import BacktestEngine
+import pandas as pd
+import matplotlib.pyplot as plt
+
 from strategy.ma_strategy import MovingAverageStrategy
+from engine.backtest_engine import BacktestEngine
 
-def main():
-    engine = BacktestEngine(
-        data_path="data/price.csv",
-        initial_cash=100000
-    )
+data = pd.read_csv("data/price.csv")
 
-    strategy = MovingAverageStrategy(
-        short_window=5,
-        long_window=20
-    )
+strategy = MovingAverageStrategy()
 
-    engine.run(strategy)
-    engine.report()
+engine = BacktestEngine(data, strategy)
 
-if __name__ == "__main__":
-    main()
+equity = engine.run()
+
+plt.plot(equity)
+plt.title("Equity Curve")
+plt.show()
+
+
+from report.performance import *
+
+print("平均收益率:", annual_return(equity))
+print("最大回撤:", max_drawdown(equity))
+print("夏普比率:",  sharpe_ratio(equity))
