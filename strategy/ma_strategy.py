@@ -1,6 +1,9 @@
 import pandas as pd
 
-class MovingAverageStrategy:
+from strategy.base import BaseStrategy
+
+class MovingAverageStrategy(BaseStrategy):
+
     def __init__(self, short_window, long_window):
         self.short_window = short_window
         self.long_window = long_window
