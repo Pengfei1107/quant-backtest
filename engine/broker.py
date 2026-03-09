@@ -1,5 +1,4 @@
 class Broker:
-
     def __init__(self, cash: float, commission: float, slippage: float):
         self.cash = cash
         self.position = 0
