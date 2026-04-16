@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip list *)",
+      "Bash(python -c \"from langchain_community.chains import create_retrieval_chain; print\\('✓ found'\\)\")"
+    ],
+    "additionalDirectories": [
+      "/Users/pengfei/Development/Projects/Backend/quant-backtest",
+      "/Users/pengfei/Development/Projects/Backend/quant-backtest/strategy"
+    ]
+  }
+}
