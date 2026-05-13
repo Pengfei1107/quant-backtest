@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(pip list *)",
-      "Bash(python -c \"from langchain_community.chains import create_retrieval_chain; print\\('✓ found'\\)\")"
+      "Bash(python -c \"from langchain_community.chains import create_retrieval_chain; print\\('✓ found'\\)\")",
+      "Bash(python study/全球资产5年收益波动对比.py)",
+      "Bash(python study/07_1方差计算.py)"
     ],
     "additionalDirectories": [
       "/Users/pengfei/Development/Projects/Backend/quant-backtest",
