@@ -1,5 +1,8 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:conda",
     "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "chatgpt.openOnStartup": true
+    "chatgpt.openOnStartup": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportOptionalSubscript": "none"
+    }
 }

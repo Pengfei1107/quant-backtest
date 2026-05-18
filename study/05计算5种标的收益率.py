@@ -27,7 +27,7 @@ sharpe = ann_ret / ann_vol  # 夏普比率
 
 # ===================== 输出结果 =====================
 print("===== 年化收益率(%) =====")
-print((ann_ret * 100).round(2))
+print((ann_ret * 100).round(2)) # type: ignore
 print("\n===== 年化波动率(%) =====")
 print((ann_vol * 100).round(2))
 print("\n===== 夏普比率 =====")
